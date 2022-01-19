@@ -1,0 +1,22 @@
+express                     (crea el servidor)
+connect-flas                (envia mensajes entre las vistas)
+bcryptjs                    (modelo para cifrar textos)
+express-handlebars@3.1.0    (crea archivos handlebars para crear archivos html)
+express-session             (guarda datos desde la memria del servidor o bd para logearse)
+method-override             (para mandar peticiones put o delete)
+mongoose                    (manejar la bs de mongobd)
+passport                    (metodo para autenticar el usuario)
+passport-local              (para usar ka bd local)
+
+morgan
+
+npm i -D handlebars@4.5.0
+
+-D [dotenv              (para usar variables de entorno y las credenciales son unicas en un solo computador)
+nodemon                 (reinicia el servidos automanticamente al hacer un cambio)
+npm-check-updates       (checa si hay actualizaciones en los modulos)
+]
+
+npm i  express connect-flas bcryptjs express-handlebars express-session method-override mongoose passport passport-local
+
+npm install dotenv nodemon npm-check-updates -D
