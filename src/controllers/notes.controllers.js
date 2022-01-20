@@ -63,4 +63,15 @@ notasCtrl.renderRango = async (req, res) => {
         res.render('administrador/index_administrador', { notes });
     }
 };
+
+notasCtrl.renderMaestroInfo = (req, res) => {
+    res.render('maestro/info_maestro');
+};
+
+notasCtrl.renderDirectorInfo = (req, res) => {
+    res.render('director/info_director');
+};
+
+
+
 module.exports = notasCtrl;
