@@ -8,7 +8,10 @@ const {
     renderEditNotes,
     updateNotes,
     deleteNotes,
-    renderRango 
+    renderRango,
+    renderMaestroInfo,
+    renderDirectorInfo
+
 } = require('../controllers/notes.controllers');
 
 const {isAuthenticated} = require('../helpers/auth');
@@ -33,6 +36,10 @@ router.delete('/notes/delete/:id', isAuthenticated, deleteNotes);
 
 // muestra la direccion dependiendo del rango
 router.get('/rol', isAuthenticated, renderRango);
+
+router.get('/maestro/info_maestro', isAuthenticated, renderMaestroInfo);
+
+router.get('/director/info_director', isAuthenticated, renderDirectorInfo);
 
 
 module.exports = router;
