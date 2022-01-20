@@ -49,7 +49,7 @@ usersCtrl.renderSignInForm = (req, res) => {
 
 usersCtrl.signin = passport.authenticate('local', {
     failureRedirect: '/users/signin',
-    successRedirect: '/notes',
+    successRedirect: '/rol',
     failureFlash: true
 })
 
