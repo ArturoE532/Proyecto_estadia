@@ -74,7 +74,8 @@ notasCtrl.renderInfo = async (req, res) => {
     }
 
     if (req.user.rango === "Director") {
-        res.render('director/info_director');
+       const user = await User.findById(req.user.id);
+       res.render('director/info_director', { user });
     }
 
     if (req.user.rango === "Admin") {
@@ -84,8 +85,21 @@ notasCtrl.renderInfo = async (req, res) => {
 };
 
 notasCtrl.renderEditInfo = async (req, res) => {
-    const user = await User.findById(req.user.id);
-    res.render('notes/editinfo', { user });
+
+
+     if (req.user.rango === "Maestro") {
+          const user = await User.findById(req.user.id);
+         res.render('maestro/editinfoM', { user });
+    }
+
+    if (req.user.rango === "Director") {
+       const user = await User.findById(req.user.id);
+       res.render('director/editinfoD', { user });
+    }
+
+    if (req.user.rango === "Admin") {
+        res.render('administrador/info_administrador');
+    }
 
 };
 
