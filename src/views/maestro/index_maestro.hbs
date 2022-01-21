@@ -1,18 +1,19 @@
 <div class="form-group" class="" aria-label="Basic mixed styles example">
     <div class="card-body">
         <h1 class="text-center" >Maestro</h1>
-        <div class="container">
+        <div class="container bgdark">
+            
             <div class="row">
                 <div class="col-3">
                 </div>
                 <div class="col-6 text-center">
-                    <button type="button" class="btn btn-warning">Datos Personales</button>
+                    <a href="/info/{{user._id}}" class="btn btn-warning">Datos Personales</a>
                     <br>
                     <br>
-                    <button type="button" class="btn btn-success">Agregar Actividad</button>
+                    <a href="/info" class="btn btn-success">Agregar Actividad</a>
                     <br>
                     <br>
-                    <button type="button" class="btn btn-danger">Imprimir Curriculum</button>
+                    <a href="/info" class="btn btn-danger">Imprimir Curriculum</a>
                     <br>
                     <br>
                     
@@ -20,60 +21,8 @@
                 <div class="col-2">
                 </div>
             </div>
+            
         </div>
-        <br>
-
+        
     </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="row">
-    Maestro
-
-    botones
-
-    datos persnales
-    agregar proyecto
-    imprimir curriculum
-
-
-
-
-
-
-
-
-    {{#each notes}}
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title d-flex justify-content-between align-items-center">
-                    {{title}} <a href="/notes/edit/{{_id}}"><i class="fas fa-edit"></i></a>
-                </h4>
-                <p>{{description}}</p>
-                <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
-                    <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit" class="btn btn-danger btn-block btn-sm">
-                        Delete
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-    {{/each}}
 </div>

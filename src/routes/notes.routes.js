@@ -9,8 +9,9 @@ const {
     updateNotes,
     deleteNotes,
     renderRango,
-    renderMaestroInfo,
-    renderDirectorInfo
+    renderInfo,
+    renderEditInfo,
+    updateInfo
 
 } = require('../controllers/notes.controllers');
 
@@ -37,9 +38,10 @@ router.delete('/notes/delete/:id', isAuthenticated, deleteNotes);
 // muestra la direccion dependiendo del rango
 router.get('/rol', isAuthenticated, renderRango);
 
-router.get('/maestro/info_maestro', isAuthenticated, renderMaestroInfo);
+router.get('/info/:id', isAuthenticated, renderInfo);
 
-router.get('/director/info_director', isAuthenticated, renderDirectorInfo);
+router.get('/info/edit/:id', isAuthenticated, renderEditInfo);
+router.put('/info/edit/:id', isAuthenticated, updateInfo);
 
 
 module.exports = router;

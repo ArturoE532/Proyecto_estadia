@@ -2,6 +2,9 @@ const notasCtrl = {};
 
 const Note = require('../models/Note');
 
+const User = require('../models/User')
+
+
 notasCtrl.renderNoteForm = (req, res) => {
     res.render('notes/newnote');
 };
@@ -16,8 +19,8 @@ notasCtrl.createNoteForm = async (req, res) => {
 };
 
 notasCtrl.renderNotes = async (req, res) => {
-    const notes = await Note.find({user: req.user.id}).sort({createdAt: 'desc'});
-    res.render('notes/allnotes', {notes});
+    const notes = await Note.find({ user: req.user.id }).sort({ createdAt: 'desc' });
+    res.render('notes/allnotes', { notes });
 };
 
 notasCtrl.renderEditNotes = async (req, res) => {
@@ -64,14 +67,33 @@ notasCtrl.renderRango = async (req, res) => {
     }
 };
 
-notasCtrl.renderMaestroInfo = (req, res) => {
-    res.render('maestro/info_maestro');
+notasCtrl.renderInfo = async (req, res) => {
+    if (req.user.rango === "Maestro") {
+        const user = await User.findById(req.user.id);
+        res.render('maestro/info_maestro', { user });
+    }
+
+    if (req.user.rango === "Director") {
+        res.render('director/info_director');
+    }
+
+    if (req.user.rango === "Admin") {
+        res.render('administrador/info_administrador');
+    }
+
 };
 
-notasCtrl.renderDirectorInfo = (req, res) => {
-    res.render('director/info_director');
+notasCtrl.renderEditInfo = async (req, res) => {
+    const user = await User.findById(req.user.id);
+    res.render('notes/editinfo', { user });
+
 };
 
-
+notasCtrl.updateInfo = async (req, res) => {
+    const { direccion, telefono } = req.body;
+    await User.findByIdAndUpdate(req.user.id, { direccion, telefono });
+    req.flash('success_msg', 'Nota actualizada correctamente');
+    res.redirect('/info/'+req.user.id);
+};
 
 module.exports = notasCtrl;

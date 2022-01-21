@@ -22,6 +22,14 @@ const UserSchema = new Schema({
     status: {
         type: String,
         require: true
+    },
+    direccion: {
+        type: String,
+        require: true
+    },
+    telefono: {
+        type: String,
+        require: true
     }
 
 }, {

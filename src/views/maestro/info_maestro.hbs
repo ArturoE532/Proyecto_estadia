@@ -1,42 +1,43 @@
-<div class="fondo">
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-2">
+<div class="container">
 
+    <div class="row">
+        <div class="col-2">
+
+        </div>
+        <div class="col-8 ">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control" value="{{user.name}}" aria-label="readonly input example"
+                    readonly>
             </div>
-            <div class="col-8 ">
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Nombre Completo</label>
-                    <input type="nombre" class="form-control" id="exampleFormControlInput1"
-                        placeholder="Santos Mares Ximena Jaqueline">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Correo Institucional</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@utna.edu.mx">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Direccion</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Area</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Telefono</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
-                </div>
-             
-
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Correo Institucional</label>
+                <input type="text" class="form-control" value="{{user.email}}" aria-label="readonly input example"
+                    readonly>
             </div>
-            <div class="col-2">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Direccion</label>
+                <input type="text" class="form-control" value="{{user.direccion}}" aria-label="readonly input example"
+                    readonly>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Puesto</label>
+                <input type="text" class="form-control" value="{{user.rango}}" aria-label="readonly input example"
+                    readonly>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Telefono</label>
+                <input type="text" class="form-control" value="{{user.telefono}}" aria-label="readonly input example"
+                    readonly>
+            </div>
 
+            <div class="col-6 text-center">
+                <a href="/info/edit/{{user._id}}" class="btn btn-warning">Editar informacion</a>
             </div>
         </div>
-        <br>
+        <div class="col-2">
+
+        </div>
     </div>
+    <br>
+</div>
