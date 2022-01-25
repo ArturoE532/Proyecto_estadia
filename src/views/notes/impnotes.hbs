@@ -1,0 +1,62 @@
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Proyecto</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {{#each notes}}
+        <tr>
+            <form action="/cur/?_method=GET" method="POST">
+                <input type="hidden" name="_method" value="GET">
+                <th scope="row">1</th>
+                <td><input type="text" class="form-control" name="title" value="{{title}}"
+                        aria-label="readonly input example" readonly></td>
+                <td><input type="text" class="form-control" name="description" value="{{description}}"
+                        aria-label="readonly input example" readonly></td>
+                <td>
+                    <button type="submit" class="btn btn-success btn-block btn-sm">
+                        Imprimir Curriculum
+                    </button>
+                </td>
+            </form>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Proyecto</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {{#each notes}}
+        <tr>
+            <th scope="row">1</th>
+            <td>{{title}}</td>
+            <td>{{description}}</td>
+            <td>@mdo</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

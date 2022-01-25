@@ -11,7 +11,9 @@ const {
     renderRango,
     renderInfo,
     renderEditInfo,
-    updateInfo
+    updateInfo,
+    renderimp,
+    curri
 
 } = require('../controllers/notes.controllers');
 
@@ -41,7 +43,12 @@ router.get('/rol', isAuthenticated, renderRango);
 router.get('/info/:id', isAuthenticated, renderInfo);
 
 router.get('/info/edit/:id', isAuthenticated, renderEditInfo);
+
 router.put('/info/edit/:id', isAuthenticated, updateInfo);
+
+router.get('/imp', isAuthenticated, renderimp);
+
+router.get('/cur', isAuthenticated, curri);
 
 
 module.exports = router;

@@ -107,7 +107,31 @@ notasCtrl.updateInfo = async (req, res) => {
     const { direccion, telefono } = req.body;
     await User.findByIdAndUpdate(req.user.id, { direccion, telefono });
     req.flash('success_msg', 'Nota actualizada correctamente');
-    res.redirect('/info/'+req.user.id);
+    res.redirect('/info/'+req.user.id); 
+};
+
+
+notasCtrl.renderimp = async (req, res) => {
+    const notes = await Note.find({ user: req.user.id }).sort({ createdAt: 'desc' });
+    res.render('notes/impnotes', { notes });
+};
+
+const PDFDocument = require('pdfkit');
+const fs = require('fs');
+
+notasCtrl.curri = (req, res) => {
+
+    const { title, description } = req.body;
+
+    var pdfDoc = new PDFDocument;
+    pdfDoc.pipe(fs.createWriteStream('SampleDocument.pdf'));
+
+    pdfDoc.text('nombre del proyecto:' + title);
+    pdfDoc.text('se trata de:' + description);
+    pdfDoc.end();
+   
+    res.redirect('/imp');
+    alert("Documento generado");
 };
 
 module.exports = notasCtrl;
