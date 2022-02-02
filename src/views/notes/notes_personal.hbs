@@ -1,0 +1,45 @@
+<div class="container bg-dark mb-3 mt-3">
+
+    <div class="row">
+        <div class="col-2">
+
+        </div>
+        <div class="col-8 ">
+            <div class="mb-3 mt-3">
+                <label for="exampleFormControlInput1" class="form-label">Nombre del Maestro:</label>
+                <h1>{{user.name}}</h1>
+                <a href="/personal" class="btn btn-danger m-3">Volver</a>
+            </div>
+        </div>
+        <div class="col-2">
+
+        </div>
+    </div>
+    <br>
+</div>
+
+<div class="row">
+    {{#each notes}}
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <form action="/cur/?_method=GET" method="POST">
+                    <input type="hidden" name="_method" value="GET">
+
+                    <div class="mb-3">
+                        <label for="" class="form-label">Nombre del proyecto</label>
+                        <input type="text" class="form-control" name="title" value="{{title}}" readonly>
+        </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
+                        <input type="text" class="form-control" name="description" value="{{description}}" readonly>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block btn-sm">
+                        Imprimir Curriculum
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

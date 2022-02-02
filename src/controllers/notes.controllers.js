@@ -129,9 +129,58 @@ notasCtrl.curri = (req, res) => {
     pdfDoc.text('nombre del proyecto:' + title);
     pdfDoc.text('se trata de:' + description);
     pdfDoc.end();
-   
-    res.redirect('/imp');
-    alert("Documento generado");
+
+    req.flash('success_msg', 'Curriculum generado exitosamente');
+    res.redirect('/rol');
+  
+};
+
+notasCtrl.renderMaestros = async (req, res) => {
+    if (req.user.rango === "Maestro") {
+        res.render('maestro/index_maestro');
+    }
+
+    if (req.user.rango === "Director") {
+        const user = await User.find({rango:"Maestro"});
+        res.render('director/lista_maestro', { user });
+    }
+
+    if (req.user.rango === "Admin") {
+        res.render('administrador/info_administrador');
+    }
+
+};
+
+notasCtrl.renderPerInfo = async (req, res) => {
+    if (req.user.rango === "Maestro") {
+        res.render('maestro/index_maestro');
+    }
+
+    if (req.user.rango === "Director") {
+        const user = await User.findById(req.params.id);
+        res.render('notes/info_personal', { user });
+    }
+
+    if (req.user.rango === "Admin") {
+        res.render('administrador/info_administrador');
+    }
+
+};
+
+notasCtrl.renderPerNotes = async (req, res) => {
+    if (req.user.rango === "Maestro") {
+        res.render('maestro/index_maestro');
+    }
+
+    if (req.user.rango === "Director") {
+        const user = await User.findById(req.params.id);
+        const notes = await Note.find({ user: req.params.id }).sort({ createdAt: 'desc' });
+        res.render('notes/notes_personal', { user,notes });
+    }
+
+    if (req.user.rango === "Admin") {
+        res.render('administrador/info_administrador');
+    }
 };
 
 module.exports = notasCtrl;

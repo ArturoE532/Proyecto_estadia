@@ -13,7 +13,10 @@ const {
     renderEditInfo,
     updateInfo,
     renderimp,
-    curri
+    curri,
+    renderMaestros,
+    renderPerInfo,
+    renderPerNotes
 
 } = require('../controllers/notes.controllers');
 
@@ -49,6 +52,12 @@ router.put('/info/edit/:id', isAuthenticated, updateInfo);
 router.get('/imp', isAuthenticated, renderimp);
 
 router.get('/cur', isAuthenticated, curri);
+
+router.get('/personal', isAuthenticated, renderMaestros);
+
+router.get('/personal/info/:id', isAuthenticated, renderPerInfo);
+
+router.get('/personal/notes/:id', isAuthenticated, renderPerNotes);
 
 
 module.exports = router;
