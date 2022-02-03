@@ -16,7 +16,10 @@ const {
     curri,
     renderMaestros,
     renderPerInfo,
-    renderPerNotes
+    renderPerNotes,
+    renderSelectM,
+    renderSelectD,
+    renderSelectP
 
 } = require('../controllers/notes.controllers');
 
@@ -58,6 +61,12 @@ router.get('/personal', isAuthenticated, renderMaestros);
 router.get('/personal/info/:id', isAuthenticated, renderPerInfo);
 
 router.get('/personal/notes/:id', isAuthenticated, renderPerNotes);
+
+router.get('/lista/maestros', isAuthenticated, renderSelectM);
+
+router.get('/lista/directores', isAuthenticated, renderSelectD);
+
+router.get('/lista', isAuthenticated, renderSelectP);
 
 
 module.exports = router;

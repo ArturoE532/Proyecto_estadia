@@ -79,7 +79,8 @@ notasCtrl.renderInfo = async (req, res) => {
     }
 
     if (req.user.rango === "Admin") {
-        res.render('administrador/info_administrador');
+        const user = await User.findById(req.user.id);
+        res.render('administrador/info_administrador',{ user });
     }
 
 };
@@ -98,7 +99,8 @@ notasCtrl.renderEditInfo = async (req, res) => {
     }
 
     if (req.user.rango === "Admin") {
-        res.render('administrador/info_administrador');
+        const user = await User.findById(req.user.id);
+        res.render('administrador/info_administrador',{ user });
     }
 
 };
@@ -142,7 +144,7 @@ notasCtrl.renderMaestros = async (req, res) => {
 
     if (req.user.rango === "Director") {
         const user = await User.find({rango:"Maestro"});
-        res.render('director/lista_maestro', { user });
+        res.render('notes/lista_personal', { user });
     }
 
     if (req.user.rango === "Admin") {
@@ -181,6 +183,59 @@ notasCtrl.renderPerNotes = async (req, res) => {
     if (req.user.rango === "Admin") {
         res.render('administrador/info_administrador');
     }
+};
+
+notasCtrl.renderSelectM = async (req, res) => {
+    
+    if (req.user.rango === "Maestro") {
+        res.render('maestro/index_maestro');
+    }
+
+    if (req.user.rango === "Director") {
+        res.render('director/index_director');
+    }
+
+    if (req.user.rango === "Admin") {
+        const user = await User.find({rango:"Maestro"});
+        res.render('notes/lista_personal', { user });
+      
+    }
+
+};
+
+notasCtrl.renderSelectD = async (req, res) => {
+    
+    if (req.user.rango === "Maestro") {
+        res.render('maestro/index_maestro');
+    }
+
+    if (req.user.rango === "Director") {
+        res.render('director/index_director');
+    }
+
+    if (req.user.rango === "Admin") {
+        const user = await User.find({rango:"Director"});
+        res.render('notes/lista_personal', { user });
+      
+    }
+
+};
+
+notasCtrl.renderSelectP = async (req, res) => {
+    
+    if (req.user.rango === "Maestro") {
+        res.render('maestro/index_maestro');
+    }
+
+    if (req.user.rango === "Director") {
+        res.render('director/index_director');
+    }
+
+    if (req.user.rango === "Admin") {
+        res.render('administrador/selec_personal');
+      
+    }
+
 };
 
 module.exports = notasCtrl;
