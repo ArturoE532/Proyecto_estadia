@@ -19,7 +19,8 @@ const {
     renderPerNotes,
     renderSelectM,
     renderSelectD,
-    renderSelectP
+    renderSelectP,
+    rendertoogleStatus
 
 } = require('../controllers/notes.controllers');
 
@@ -61,6 +62,8 @@ router.get('/personal', isAuthenticated, renderMaestros);
 router.get('/personal/info/:id', isAuthenticated, renderPerInfo);
 
 router.get('/personal/notes/:id', isAuthenticated, renderPerNotes);
+
+router.get('/personal/toogleStatus/:id', isAuthenticated, rendertoogleStatus);
 
 router.get('/lista/maestros', isAuthenticated, renderSelectM);
 

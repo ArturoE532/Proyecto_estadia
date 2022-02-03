@@ -74,27 +74,27 @@ notasCtrl.renderInfo = async (req, res) => {
     }
 
     if (req.user.rango === "Director") {
-       const user = await User.findById(req.user.id);
-       res.render('director/info_director', { user });
+        const user = await User.findById(req.user.id);
+        res.render('director/info_director', { user });
     }
 
     if (req.user.rango === "Admin") {
         const user = await User.findById(req.user.id);
-        res.render('administrador/info_administrador',{ user });
+        res.render('administrador/info_administrador', { user });
     }
 
 };
 
 notasCtrl.renderEditInfo = async (req, res) => {
-         const user = await User.findById(req.user.id);
-         res.render('notes/editinfo', { user });
+    const user = await User.findById(req.user.id);
+    res.render('notes/editinfo', { user });
 };
 
 notasCtrl.updateInfo = async (req, res) => {
     const { direccion, telefono } = req.body;
     await User.findByIdAndUpdate(req.user.id, { direccion, telefono });
     req.flash('success_msg', 'Nota actualizada correctamente');
-    res.redirect('/info/'+req.user.id); 
+    res.redirect('/info/' + req.user.id);
 };
 
 
@@ -119,7 +119,7 @@ notasCtrl.curri = (req, res) => {
 
     req.flash('success_msg', 'Curriculum generado exitosamente');
     res.redirect('/rol');
-  
+
 };
 
 notasCtrl.renderMaestros = async (req, res) => {
@@ -128,7 +128,7 @@ notasCtrl.renderMaestros = async (req, res) => {
     }
 
     if (req.user.rango === "Director") {
-        const user = await User.find({rango:"Maestro"});
+        const user = await User.find({ rango: "Maestro" });
         res.render('notes/lista_personal', { user });
     }
 
@@ -149,8 +149,8 @@ notasCtrl.renderPerInfo = async (req, res) => {
     }
 
     if (req.user.rango === "Admin") {
-      const user = await User.findById(req.params.id);
-      res.render('notes/info_personal', { user });
+        const user = await User.findById(req.params.id);
+        res.render('notes/info_personal', { user });
     }
 
 };
@@ -163,18 +163,18 @@ notasCtrl.renderPerNotes = async (req, res) => {
     if (req.user.rango === "Director") {
         const user = await User.findById(req.params.id);
         const notes = await Note.find({ user: req.params.id }).sort({ createdAt: 'desc' });
-        res.render('notes/notes_personal', { user,notes });
+        res.render('notes/notes_personal', { user, notes });
     }
 
     if (req.user.rango === "Admin") {
         const user = await User.findById(req.params.id);
         const notes = await Note.find({ user: req.params.id }).sort({ createdAt: 'desc' });
-        res.render('notes/notes_personal', { user,notes });
+        res.render('notes/notes_personal', { user, notes });
     }
 };
 
 notasCtrl.renderSelectM = async (req, res) => {
-    
+
     if (req.user.rango === "Maestro") {
         res.render('maestro/index_maestro');
     }
@@ -184,15 +184,15 @@ notasCtrl.renderSelectM = async (req, res) => {
     }
 
     if (req.user.rango === "Admin") {
-        const user = await User.find({rango:"Maestro"});
+        const user = await User.find({ rango: "Maestro" });
         res.render('notes/lista_personal', { user });
-      
+
     }
 
 };
 
 notasCtrl.renderSelectD = async (req, res) => {
-    
+
     if (req.user.rango === "Maestro") {
         res.render('maestro/index_maestro');
     }
@@ -202,15 +202,15 @@ notasCtrl.renderSelectD = async (req, res) => {
     }
 
     if (req.user.rango === "Admin") {
-        const user = await User.find({rango:"Director"});
+        const user = await User.find({ rango: "Director" });
         res.render('notes/lista_personal', { user });
-      
+
     }
 
 };
 
 notasCtrl.renderSelectP = async (req, res) => {
-    
+
     if (req.user.rango === "Maestro") {
         res.render('maestro/index_maestro');
     }
@@ -221,7 +221,28 @@ notasCtrl.renderSelectP = async (req, res) => {
 
     if (req.user.rango === "Admin") {
         res.render('administrador/selec_personal');
-      
+
+    }
+
+};
+
+notasCtrl.rendertoogleStatus = async (req, res) => {
+
+    if (req.user.rango === "Maestro") {
+        res.render('maestro/index_maestro');
+    }
+
+    if (req.user.rango === "Director") {
+        res.render('director/index_director');
+    }
+
+    if (req.user.rango === "Admin") {
+        const { id } = req.params;
+        const user = await User.findById(id);
+        user.status = !user.status;
+        await user.save();
+        res.render('administrador/selec_personal');
+
     }
 
 };
