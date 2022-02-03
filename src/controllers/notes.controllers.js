@@ -86,23 +86,8 @@ notasCtrl.renderInfo = async (req, res) => {
 };
 
 notasCtrl.renderEditInfo = async (req, res) => {
-
-
-     if (req.user.rango === "Maestro") {
-          const user = await User.findById(req.user.id);
-         res.render('maestro/editinfoM', { user });
-    }
-
-    if (req.user.rango === "Director") {
-       const user = await User.findById(req.user.id);
-       res.render('director/editinfoD', { user });
-    }
-
-    if (req.user.rango === "Admin") {
-        const user = await User.findById(req.user.id);
-        res.render('administrador/info_administrador',{ user });
-    }
-
+         const user = await User.findById(req.user.id);
+         res.render('notes/editinfo', { user });
 };
 
 notasCtrl.updateInfo = async (req, res) => {
@@ -164,7 +149,8 @@ notasCtrl.renderPerInfo = async (req, res) => {
     }
 
     if (req.user.rango === "Admin") {
-        res.render('administrador/info_administrador');
+      const user = await User.findById(req.params.id);
+      res.render('notes/info_personal', { user });
     }
 
 };
@@ -181,7 +167,9 @@ notasCtrl.renderPerNotes = async (req, res) => {
     }
 
     if (req.user.rango === "Admin") {
-        res.render('administrador/info_administrador');
+        const user = await User.findById(req.params.id);
+        const notes = await Note.find({ user: req.params.id }).sort({ createdAt: 'desc' });
+        res.render('notes/notes_personal', { user,notes });
     }
 };
 
