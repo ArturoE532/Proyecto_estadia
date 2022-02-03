@@ -1,4 +1,6 @@
+<a href="javascript:history.back()" class="btn btn-danger m-3">Volver</a>
 <table class="table table-dark table-striped">
+
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -6,25 +8,30 @@
             <th scope="col">Fecha de ingreso</th>
         </tr>
     </thead>
+
     <tbody>
 
         {{#each user}}
+
         <tr>
             <th scope="row">1</th>
             <td>
                 <input type="text" class="form-control" name="title" value="{{name}}"
                     aria-label="readonly input example" readonly>
             </td>
-     <td>
+            <td>
                 <input type="text" class="form-control" name="title" value="{{createdAt}}"
                     aria-label="readonly input example" readonly>
             </td>
             <td>
-                
-                    <a href="/personal/info/{{_id}}" class="btn btn-primary btn-block btn-sm">Ver perfil</a>
-                    <a href="/personal/notes/{{_id}}" class="btn btn-secondary btn-block btn-sm">Ver notas</a>
+
+                <a href="/personal/info/{{_id}}" class="btn btn-primary btn-block btn-sm">Ver perfil</a>
+                <a href="/personal/notes/{{_id}}" class="btn btn-success btn-block btn-sm">Ver notas</a>
             </td>
         </tr>
+
         {{/each}}
+
     </tbody>
+    
 </table>

@@ -1,47 +1,55 @@
-<div class="container bg-dark">
+<div class="jumbotron mt-4">
+    <h1 class="display-4">Datos generales</h1>
+    <h1 class="display-6">del Mtro. {{user.name}}</h1>
+    <hr class="my-4">
 
-    <div class="row">
-        <div class="col-2">
+    <div class="container">
 
-        </div>
-        <div class="col-8 ">
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Nombre Completo</label>
-                <input type="text" class="form-control" value="{{user.name}}" aria-label="readonly input example"
-                    readonly>
-            </div>
-            <div class="mb-3">
-               <label for="exampleFormControlInput1" class="form-label">Correo Institucional</label>
-                <input type="text" class="form-control" value="{{user.email}}" aria-label="readonly input example"
-                    readonly>
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Direccion</label>
-               <input type="text" class="form-control" value="{{user.direccion}}" aria-label="readonly input example"
-                    readonly>
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Puesto</label>
-                <input type="text" class="form-control" value="{{user.rango}}" aria-label="readonly input example"
-                    readonly>
-            </div>
-            <div class="mb-3">
-               <label for="exampleFormControlInput1" class="form-label">Telefono</label>
-                <input type="text" class="form-control" value="{{user.telefono}}" aria-label="readonly input example"
-                    readonly>
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Status</label>
-                <input type="text" class="form-control" value="{{user.status}}" aria-label="readonly input example"
-                    readonly>
+        <div class="row">
+
+            <div class="col-2">
             </div>
 
-            <a href="javascript:history.back()" class="btn btn-danger">Volver</a>
+            <div class="col-8 ">
+                
+                <div class="mb-3">
+                    <label class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" value="{{user.name}}" readonly>
+                </div>
 
-        </div>
-        <div class="col-2">
+                <div class="mb-3">
+                    <label class="form-label">Correo Institucional</label>
+                    <input type="text" class="form-control" value="{{user.email}}" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Direccion</label>
+                    <input type="text" class="form-control" value="{{user.direccion}}" readonly>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Puesto</label>
+                    <input type="text" class="form-control" value="{{user.rango}}" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Telefono</label>
+                    <input type="text" class="form-control" value="{{user.telefono}}" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Status</label>
+                    <input type="text" class="form-control" value="{{user.status}}" readonly>
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="javascript:history.back()" class="btn btn-danger">Volver</a>
+                </div>
+            </div>
+
+            <div class="col-2">
+            </div>
 
         </div>
     </div>
-    <br>
 </div>

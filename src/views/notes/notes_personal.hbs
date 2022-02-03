@@ -1,45 +1,44 @@
-<div class="container bg-dark mb-3 mt-3">
+<div class="jumbotron mt-4">
+    <h3 class="form-label">Nombre del Maestro:</h4>
+        <h1 class="text-info">{{user.name}}</h1>
+        <hr class="my-4">
+        <a href="javascript:history.back()" class="btn btn-danger">Volver</a>
 
-    <div class="row">
-        <div class="col-2">
+        <div class="row m-3">
 
-        </div>
-        <div class="col-8 ">
-            <div class="mb-3 mt-3">
-                <label for="exampleFormControlInput1" class="form-label">Nombre del Maestro:</label>
-                <h1>{{user.name}}</h1>
-                  <a href="javascript:history.back()" class="btn btn-danger">Volver</a>
-            </div>
-        </div>
-        <div class="col-2">
+            {{#each notes}}
 
-        </div>
-    </div>
-    <br>
-</div>
+            <div class="col-md-4">
 
-<div class="row">
-    {{#each notes}}
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-body">
-                <form action="/cur/?_method=GET" method="POST">
-                    <input type="hidden" name="_method" value="GET">
+                <div class="card">
 
-                    <div class="mb-3">
-                        <label for="" class="form-label">Nombre del proyecto</label>
-                        <input type="text" class="form-control" name="title" value="{{title}}" readonly>
-        </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
-                        <input type="text" class="form-control" name="description" value="{{description}}" readonly>
+                    <div class="card-body">
+
+                        <form action="/cur/?_method=GET" method="POST">
+                            <input type="hidden" name="_method" value="GET">
+
+                            <div class="mb-3">
+                                <label for="" class="form-label">Nombre del proyecto</label>
+                                <input class="form-control" name="title" value="{{title}}" readonly>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
+                                <input class="form-control" name="description" value="{{description}}" readonly>
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-block btn-sm">
+                                Imprimir Curriculum
+                            </button>
+                        </form>
+
                     </div>
-                    <button type="submit" class="btn btn-success btn-block btn-sm">
-                        Imprimir Curriculum
-                    </button>
-                </form>
+                </div>
+
             </div>
+
+            {{/each}}
+
         </div>
-    </div>
-    {{/each}}
+
 </div>
