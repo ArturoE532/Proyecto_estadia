@@ -281,4 +281,40 @@ notasCtrl.renderAllDatosAcademi = async (req, res) => {
 
 };
 
+notasCtrl.renderExperiLavo = async (req, res) => {
+
+    if (req.user.rango === "Maestro") {
+        res.render('notes/experiencia_lavoral');
+    }
+
+    if (req.user.rango === "Director") {
+        res.render('notes/experiencia_lavoral');
+    }
+
+    if (req.user.rango === "Admin") {
+        res.render('administrador/index_administrador');
+
+    }
+
+};
+
+notasCtrl.renderAllExperiencia = async (req, res) => {
+
+    if (req.user.rango === "Maestro") {
+        res.render('notes/all_experiencia_lav');
+    }
+
+    if (req.user.rango === "Director") {
+        res.render('notes/all_experiencia_lav');
+    }
+
+    if (req.user.rango === "Admin") {
+        res.render('administrador/index_administrador');
+
+    }
+
+};
+
+
+
 module.exports = notasCtrl;

@@ -22,7 +22,9 @@ const {
     renderSelectP,
     rendertoogleStatus,
     renderDatosAca,
-    renderAllDatosAcademi
+    renderAllDatosAcademi,
+    renderExperiLavo,
+    renderAllExperiencia
 
 } = require('../controllers/notes.controllers');
 
@@ -76,6 +78,14 @@ router.get('/lista', isAuthenticated, renderSelectP);
 router.get('/maestro/Academic', isAuthenticated, renderDatosAca);
 
 router.get('/maestro/AllDatos', isAuthenticated, renderAllDatosAcademi);
+
+router.get('/maestro/Experience', isAuthenticated, renderExperiLavo);
+
+router.get('/maestro/AllExperie', isAuthenticated, renderAllExperiencia);
+
+
+
+
 
 
 
