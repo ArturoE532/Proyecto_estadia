@@ -20,7 +20,9 @@ const {
     renderSelectM,
     renderSelectD,
     renderSelectP,
-    rendertoogleStatus
+    rendertoogleStatus,
+    renderDatosAca,
+    renderAllDatosAcademi
 
 } = require('../controllers/notes.controllers');
 
@@ -70,6 +72,12 @@ router.get('/lista/maestros', isAuthenticated, renderSelectM);
 router.get('/lista/directores', isAuthenticated, renderSelectD);
 
 router.get('/lista', isAuthenticated, renderSelectP);
+
+router.get('/maestro/Academic', isAuthenticated, renderDatosAca);
+
+router.get('/maestro/AllDatos', isAuthenticated, renderAllDatosAcademi);
+
+
 
 
 module.exports = router;

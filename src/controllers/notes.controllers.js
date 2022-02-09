@@ -247,4 +247,38 @@ notasCtrl.rendertoogleStatus = async (req, res) => {
 
 };
 
+notasCtrl.renderDatosAca = async (req, res) => {
+
+    if (req.user.rango === "Maestro") {
+        res.render('notes/datos_academicos');
+    }
+
+    if (req.user.rango === "Director") {
+        res.render('notes/datos_academicos');
+    }
+
+    if (req.user.rango === "Admin") {
+        res.render('administrador/index_administrador');
+
+    }
+
+};
+
+notasCtrl.renderAllDatosAcademi = async (req, res) => {
+
+    if (req.user.rango === "Maestro") {
+        res.render('notes/all_datos_academi');
+    }
+
+    if (req.user.rango === "Director") {
+        res.render('notes/all_datos_academi');
+    }
+
+    if (req.user.rango === "Admin") {
+        res.render('administrador/index_administrador');
+
+    }
+
+};
+
 module.exports = notasCtrl;

@@ -35,6 +35,21 @@
                     <label class="form-label">Telefono</label>
                     <input type="text" class="form-control" value="{{user.telefono}}" readonly>
                 </div>
+                       <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Fecha de Ingreso</label>
+                <input type="text" class="form-control" value="{{user.createdAt}}" aria-label="readonly input example"
+                    readonly>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nivel Academico</label>
+                <input type="text" class="form-control" value="{{user.nivelA}}" aria-label="readonly input example"
+                    readonly>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nivel Investigacion</label>
+                <input type="text" class="form-control" value="{{user.nivelI}}" aria-label="readonly input example"
+                    readonly>
+            </div>
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <a href="/info/edit/{{user._id}}" class="btn btn-warning me-md-2 m-1">Editar informacion</a>
