@@ -4,6 +4,8 @@ const Note = require('../models/Note');
 
 const User = require('../models/User')
 
+const path = require('path');
+const { unlink } = require('fs-extra');
 
 notasCtrl.renderNoteForm = (req, res) => {
     res.render('notes/newnote');
@@ -315,6 +317,26 @@ notasCtrl.renderAllExperiencia = async (req, res) => {
 
 };
 
+notasCtrl.renderupload = async (req, res) => {
+    res.render('notes/upload');
+};
 
+notasCtrl.upload = async (req, res) => {
+    const user = await User.findById(req.user.id);
+    user.filename = req.file.filename;
+    user.path = '/img/uploads/' + req.file.filename;
+    user.originalname = req.file.originalname;
+    user.mimetype = req.file.mimetype;
+    user.size = req.file.size;
+
+    await user.save();
+    res.render('notes/editinfo', { user });
+};
+
+notasCtrl.renderimage = async (req, res) => {
+    const { id } = req.params;
+    const user = await User.findById(id);
+    res.render('notes/profile', { user });
+};
 
 module.exports = notasCtrl;

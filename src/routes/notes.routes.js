@@ -24,7 +24,10 @@ const {
     renderDatosAca,
     renderAllDatosAcademi,
     renderExperiLavo,
-    renderAllExperiencia
+    renderAllExperiencia,
+    renderupload, 
+    upload, 
+    renderimage
 
 } = require('../controllers/notes.controllers');
 
@@ -57,6 +60,12 @@ router.get('/info/edit/:id', isAuthenticated, renderEditInfo);
 
 router.put('/info/edit/:id', isAuthenticated, updateInfo);
 
+router.get('/upload', isAuthenticated, renderupload);
+
+router.post('/upload', isAuthenticated, upload);
+
+router.get('/image/:id', isAuthenticated, renderimage);
+
 router.get('/imp', isAuthenticated, renderimp);
 
 router.get('/cur', isAuthenticated, curri);
@@ -82,12 +91,5 @@ router.get('/maestro/AllDatos', isAuthenticated, renderAllDatosAcademi);
 router.get('/maestro/Experience', isAuthenticated, renderExperiLavo);
 
 router.get('/maestro/AllExperie', isAuthenticated, renderAllExperiencia);
-
-
-
-
-
-
-
 
 module.exports = router;

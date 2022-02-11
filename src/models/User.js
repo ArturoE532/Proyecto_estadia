@@ -31,6 +31,21 @@ const UserSchema = new Schema({
     telefono: {
         type: String,
         require: true
+    },
+    filename: {
+        type: String
+    },
+    path: {
+        type: String
+    },
+    originalname: {
+        type: String
+    },
+    mimetype: {
+        type: String
+    },
+    size: { 
+        type: Number
     }
 
 }, {
