@@ -1,73 +1,62 @@
 <div class="jumbotron mt-4">
     <h1 class="display-4">Datos Academicos</h1>
-    <h1 class="display-6">del Mtro. {{user.name}}</h1>
+    <h1 class="display-6">del Mtro. {{user.value}}</h1>
     <hr class="my-4">
-
-    <div class="card-body">
-        <div class="row">
-            <div class="col-4"> </div>
-            <div class="col-4">
-                <select class="form-select" aria-label="Disabled select example" disabled>
-                    <option selected>Open this select</option>
-                </select>
-
-
-                <select placeholder="Nivel de escolaridad"
-                    class="ns_ form-control ng-pristine ng-invalid ng-invalid-required ng-touched"
-                    debug-cve-control-ui="select" required="required">
-                    <option value="" class="">-- Selecciona una opción --</option>
-                    <option value="5" label="Licenciatura">Licenciatura</option>
-                    <option value="6" label="Especialidad">Especialidad</option>
-                    <option value="7" label="Maestría">Maestría</option>
-                    <option value="8" label="Doctorado">Doctorado</option>
-                    <option value="0" label="Pos Doctorado">Pos Doctorado</option>
-                </select>
-
-            </div>
-            <div class="col-4"> </div>
-        </div>
-    </div>
 
     <div class="container">
         <div class="row">
-            <div class="col-2"></div>
+            <div class="col-3"></div>
 
-            <div class="col-8 ">
+            <div class="col-6 ">
 
-                <div class="mb-3">
-                    <label class="form-label"> <strong> Nombre de la Carrera:</strong></label>
-                    <input type="text" class="form-control" value="{{user.name}}">
-                </div>
+                <form action="/notes/newacademico" method="POST">
+                    <div class="mb-3">
+                        <select class="form-select form-control" aria-label="Default select example" value="tipo"
+                            value="{{tipo}}" name="tipo">
+                            <option value="" class="">-- Selecciona una opción --</option>
+                            <option value="Licenciatura" label="Licenciatura">Licenciatura</option>
+                            <option value="Especialidad" label="Especialidad">Especialidad</option>
+                            <option value="Maestría" label="Maestría">Maestría</option>
+                            <option value="Doctorado" label="Doctorado">Doctorado</option>
+                            <option value="Pos Doctorado" label="Pos Doctorado">Pos Doctorado</option>
+                        </select>
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Nombre de la Institución:</label>
-                    <input type="text" class="form-control" value="{{user.email}}">
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label"> <strong> Nombre de la Carrera:</strong></label>
+                        <input type="text" class="form-control" value="{{carrera}}" name="carrera">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Fecha de inicio:</label>
-                    <input type="text" class="form-control" value="{{user.createdAt}}"
-                        aria-label="readonly input example">
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Nombre de la Institución:</label>
+                        <input type="text" class="form-control" value="{{institucion}}" name="institucion">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Fecha de Termino:</label>
-                    <input type="text" class="form-control" value="{{user.createdAt}}"
-                        aria-label="readonly input example">
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Fecha de inicio:</label>
+                        <input type="date" class="form-control" value="{{fecha_inicio}}" name="fecha_inicio">
+                    </div>
 
-                 <div class="mb-3">
-                    <label class="form-label">Pais:</label>
-                    <input type="text" class="form-control" value="{{user}}">
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Fecha de Termino:</label>
+                        <input type="date" class="form-control" value="{{fecha_termino}}" name="fecha_termino">
+                    </div>
 
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a href="javascript:history.back()" class="btn btn-danger">Volver</a>
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Pais:</label>
+                        <input type="text" class="form-control" value="{{pais}}" name="pais">
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-block">
+                        <button class="btn btn-primary btn-block">
+                            Guardar
+                        </button>
+                        <a href="javascript:history.back()" class="btn btn-danger btn-block">Volver</a>
+                    </div>
+                </form>
             </div>
 
-            <div class="col-2">
-            </div>
+            <div class="col-3"></div>
 
         </div>
     </div>

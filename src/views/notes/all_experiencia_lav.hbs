@@ -1,43 +1,47 @@
 <div class="jumbotron mt-4">
-    <h1 class="display-4">Experiencia Lavoral</h1>
+    <h1 class="display-4">Experiencia Laboral</h1>
     <h1 class="display-6">del Mtro. {{user.name}}</h1>
     <hr class="my-4">
 
+
     <div class="container">
         <div class="row">
-            <div class="col-2"></div>
 
-            <div class="col-8 ">
+            <div class="col-3"></div>
 
-                <div class="mb-3">
-                    <label class="form-label"> <strong> Nombre de la Institucion:</strong></label>
-                    <input type="text" class="form-control" value="{{user.name}}">
-                </div>
+            <div class="col-6 ">
 
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Fecha de inicio:</label>
-                    <input type="text" class="form-control" value="{{user.createdAt}}"
-                        aria-label="readonly input example">
-                </div>
+                <form action="/notes/newExpLab" method="POST">
+                    <div class="mb-3">
+                        <label class="form-label"> Nombre de la Institucion:</label>
+                        <input type="text" class="form-control" value="{{institucion}}" name="institucion">
+                    </div>
 
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Fecha de Termino:</label>
-                    <input type="text" class="form-control" value="{{user.createdAt}}"
-                        aria-label="readonly input example">
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Fecha de inicio:</label>
+                        <input type="date" class="form-control" value="{{fecha_inicio}}" name="fecha_inicio">
+                    </div>
 
-                 <div class="mb-3">
-                    <label class="form-label">Puesto:</label>
-                    <input type="text" class="form-control" value="{{user}}">
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Fecha de Termino:</label>
+                        <input type="date" class="form-control" value="{{fecha_termino}}" name="fecha_termino">
+                    </div>
 
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a href="javascript:history.back()" class="btn btn-danger">Volver</a>
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label">Puesto:</label>
+                        <input type="text" class="form-control" value="{{puesto}}" name="puesto">
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-block">
+                        <button class="btn btn-primary btn-block">
+                            Guardar
+                        </button>
+                        <a href="javascript:history.back()" class="btn btn-danger btn-block">Volver</a>
+                    </div>
+                </form>
             </div>
 
-            <div class="col-2">
-            </div>
+            <div class="col-3"></div>
 
         </div>
     </div>

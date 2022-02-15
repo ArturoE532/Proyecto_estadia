@@ -4,6 +4,10 @@ const Note = require('../models/Note');
 
 const User = require('../models/User')
 
+const Academico = require('../models/Academico')
+
+const ExpLab = require('../models/ExpLab')
+
 const path = require('path');
 const { unlink } = require('fs-extra');
 
@@ -235,6 +239,10 @@ notasCtrl.rendertoogleStatus = async (req, res) => {
     }
 
     if (req.user.rango === "Director") {
+        const { id } = req.params;
+        const user = await User.findById(id);
+        user.status = !user.status;
+        await user.save();
         res.render('director/index_director');
     }
 
@@ -252,11 +260,13 @@ notasCtrl.rendertoogleStatus = async (req, res) => {
 notasCtrl.renderDatosAca = async (req, res) => {
 
     if (req.user.rango === "Maestro") {
-        res.render('notes/datos_academicos');
+        const academicos = await Academico.find({ user: req.user.id }).sort({ createdAt: 'desc' });
+        res.render('notes/datos_academicos', { academicos });
     }
 
     if (req.user.rango === "Director") {
-        res.render('notes/datos_academicos');
+        const academicos = await Academico.find({ user: req.user.id }).sort({ createdAt: 'desc' });
+        res.render('notes/datos_academicos', { academicos });
     }
 
     if (req.user.rango === "Admin") {
@@ -283,14 +293,25 @@ notasCtrl.renderAllDatosAcademi = async (req, res) => {
 
 };
 
+notasCtrl.createAcademiForm = async (req, res) => {
+    const { tipo, carrera, institucion, fecha_inicio, fecha_termino, pais } = req.body;
+    const newAcademico = new Academico({ tipo, carrera, institucion, fecha_inicio, fecha_termino, pais });
+    newAcademico.user = req.user.id;
+    await newAcademico.save();
+    req.flash('success_msg', 'Dato Academico creado correctamente');
+    res.redirect('/dato/Academic');
+};
+
 notasCtrl.renderExperiLavo = async (req, res) => {
 
     if (req.user.rango === "Maestro") {
-        res.render('notes/experiencia_lavoral');
+        const explab = await ExpLab.find({ user: req.user.id }).sort({ createdAt: 'desc' });
+        res.render('notes/experiencia_lavoral', { explab });
     }
 
     if (req.user.rango === "Director") {
-        res.render('notes/experiencia_lavoral');
+        const explab = await ExpLab.find({ user: req.user.id }).sort({ createdAt: 'desc' });
+        res.render('notes/experiencia_lavoral', { explab });
     }
 
     if (req.user.rango === "Admin") {
@@ -315,6 +336,15 @@ notasCtrl.renderAllExperiencia = async (req, res) => {
 
     }
 
+};
+
+notasCtrl.createExpLabForm = async (req, res) => {
+    const { institucion, fecha_inicio, fecha_termino, puesto } = req.body;
+    const newExpLab = new ExpLab({ institucion, fecha_inicio, fecha_termino, puesto });
+    newExpLab.user = req.user.id;
+    await newExpLab.save();
+    req.flash('success_msg', 'Dato creado correctamente');
+    res.redirect('/dato/Experience');
 };
 
 notasCtrl.renderupload = async (req, res) => {

@@ -27,7 +27,9 @@ const {
     renderAllExperiencia,
     renderupload, 
     upload, 
-    renderimage
+    renderimage,
+    createAcademiForm,
+    createExpLabForm
 
 } = require('../controllers/notes.controllers');
 
@@ -84,12 +86,16 @@ router.get('/lista/directores', isAuthenticated, renderSelectD);
 
 router.get('/lista', isAuthenticated, renderSelectP);
 
-router.get('/maestro/Academic', isAuthenticated, renderDatosAca);
+router.get('/dato/Academic', isAuthenticated, renderDatosAca);
 
-router.get('/maestro/AllDatos', isAuthenticated, renderAllDatosAcademi);
+router.get('/dato/AllDatos', isAuthenticated, renderAllDatosAcademi);
 
-router.get('/maestro/Experience', isAuthenticated, renderExperiLavo);
+router.post('/notes/newacademico', isAuthenticated, createAcademiForm);
 
-router.get('/maestro/AllExperie', isAuthenticated, renderAllExperiencia);
+router.get('/dato/Experience', isAuthenticated, renderExperiLavo);
 
-module.exports = router;
+router.get('/dato/AllExperie', isAuthenticated, renderAllExperiencia);
+
+router.post('/notes/newExpLab', isAuthenticated, createExpLabForm); 
+
+module.exports = router; 

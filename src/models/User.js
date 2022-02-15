@@ -19,6 +19,14 @@ const UserSchema = new Schema({
         type: String,
         require: true
     },
+    nivelA: {
+        type: String,
+        require: true
+    },
+    nivelI: {
+        type: String,
+        require: true
+    },
     status: {
         type: Boolean,
         default: true,

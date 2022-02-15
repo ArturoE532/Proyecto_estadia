@@ -1,0 +1,61 @@
+<div class="jumbotron mt-4">
+    <h1 class="display-4">Datos Academicos</h1>
+    <h1 class="display-6">del Mtro. {{user.name}}</h1>
+    <hr class="my-4">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+
+            <div class="col-6 ">
+
+                <div class="mb-3">
+                     <select class="form-select form-control" aria-label="Default select example" name="tipo"
+                            value="{{tipo}}">
+                    <option value="" class="">-- Selecciona una opción --</option>
+                    <option value="Licenciatura" label="Licenciatura">Licenciatura</option>
+                    <option value="Especialidad" label="Especialidad">Especialidad</option>
+                    <option value="Maestría" label="Maestría">Maestría</option>
+                    <option value="Doctorado" label="Doctorado">Doctorado</option>
+                    <option value="Pos Doctorado" label="Pos Doctorado">Pos Doctorado</option>
+                </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label"> <strong> Nombre de la Carrera:</strong></label>
+                    <input type="text" class="form-control" value="{{carrera}}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Nombre de la Institución:</label>
+                    <input type="text" class="form-control" value="{{institucion}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Fecha de inicio:</label>
+                    <input type="text" class="form-control" value="{{fecha_inicio}}"
+                        aria-label="readonly input example">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Fecha de Termino:</label>
+                    <input type="text" class="form-control" value="{{fecha_termino}}"
+                        aria-label="readonly input example">
+                </div>
+
+                 <div class="mb-3">
+                    <label class="form-label">Pais:</label>
+                    <input type="text" class="form-control" value="{{pais}}">
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="javascript:history.back()" class="btn btn-danger">Volver</a>
+                </div>
+            </div>
+
+            <div class="col-3">
+            </div>
+
+        </div>
+    </div>
+</div>
