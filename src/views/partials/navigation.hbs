@@ -1,3 +1,90 @@
+<!-- header section starts  -->
+<header class="header">
+    <a href="/" class="logo"><i class="fas fa-address-card"></i> Sistema de Curriculum</a>
+
+    <div class="icons">
+        <div class="fas fa-moon" id="theme-btn"></div>
+        <div class="fas fa-palette" id="color-btn"></div>
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-bars" id="menu-btn"></div>
+        {{#if user}}
+        {{else}}
+        <div class="fas fa-user" id="account-btn"></div>
+        {{/if}}
+    </div>
+
+    <nav class="navbar">
+        {{#if user}}
+        <a href="/rol">Inicio</a>
+        <a href="botones.html">Botones</a>
+        <a href="allnotes.html">All Notes</a>
+        <a href="FormularioP.html">FormularioP</a>
+        <a href="Admin-Form1.html">AdminForm1</a>
+        <a href="VerPersonal.html">Ver Personal</a>
+        <a href="Codigo.html">CodPrueba</a>
+        <a href="TablaCont.html">Tabla</a>
+        {{else}}
+        <div class="icons">
+            <a href="/">Debes Inciar sesion para ver las opciones</a>
+        </div>
+        {{/if}}
+    </nav>
+
+    <form action="" class="search-form">
+        <input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+    <div class="colors-palette">
+        <h3>UTNA Colors</h3>
+        <div class="colors">
+            <div class="color" style="background:#1A5276"></div>
+            <div class="color" style="background: #27ae60;"></div>
+            <div class="color" style="background: #C0392B ;"></div>
+            <div class="color" style="background: #F1C40F;"></div>
+            <div class="color" style="background: #B33771;"></div>
+            <div class="color" style="background: #196F3D;"></div>
+            <div class="color" style="background: #ff9f1a;"></div>
+            <div class="color" style="background: #e84393;"></div>
+            <div class="color" style="background: #808B96;"></div>
+        </div>
+    </div>
+</header>
+<!-- header section end  -->
+
+<!-- LOGIN  -->
+<div class="account-form">
+    <div id="close-form" class="fas fa-times"></div>
+    <div class="buttons">
+        <span class="btn active login-btn">login</span>
+        <span class="btn register-btn">register</span>
+    </div>
+
+    <form class="login-form active" action="/users/signin" method="POST">
+        <h3>login now</h3>
+        <input type="email" placeholder="Ingresa tu E-mail" class="box" name="email">
+        <input type="password" placeholder="Ingresa tu password" class="box" name="password">
+        <div class="flex">
+            <input type="checkbox" name="" id="remember-me">
+            <label for="remember-me">remember me</label>
+            <a href="#">forgot password?</a>
+        </div>
+        <input type="submit" value="login now" class="btn">
+    </form>
+
+    <form class="register-form" action="">
+        <h3>register now</h3>
+        <input type="email" placeholder="enter your email" class="box">
+        <input type="password" placeholder="enter your password" class="box">
+        <input type="password" placeholder="confirm your password" class="box">
+        <input type="submit" value="register now" class="btn">
+    </form>
+</div>
+<!-- Login ends -->
+
+
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
         <a class="navbar-brand" href="/">Notas App</a>
