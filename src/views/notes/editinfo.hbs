@@ -1,63 +1,53 @@
-<div class="container">
+<br>
 
-    <div class="col-md-8 mx-auto">
-        <div class="card">
-            <div class="card-header">
-                <h3>Edit Note</h3>
-            </div>
-            <div class="card-body">
-                <form action="/info/edit/{{user.id}}?_method=PUT" method="POST">
-                    <input type="hidden" name="_method" value="PUT">
+<!-- contact section starts  -->
+<section class="contact">
+    <h1 class="heading"><span> Editar Datos </span>Generales </h1>
+    <h1 class="heading"><span> Editar </span> Datos Generales </h1>
 
-                    <div class="text-center mb-4">
-                        <img src="{{user.path}}" class="card-img-top" alt="Inserte una foto de perfil" style="width:170px; height:200px">
-                        <div class=" mt-3">
-                            <a href="/upload" class="btn btn-primary">
-                                Seleccionar foto
-                            </a>
-                        </div>
-                    </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Nombre Completo</label>
-                        <input type="text" class="form-control" value="{{user.name}}" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Correo Institucional</label>
-                        <input type="text" class="form-control" value="{{user.email}}" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Direccion</label>
-                        <input type="text" class="form-control" name="direccion" value="{{user.direccion}}">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Puesto</label>
-                        <input type="text" class="form-control" value="{{user.rango}}" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Telefono</label>
-                        <input type="text" class="form-control" name="telefono" value="{{user.telefono}}">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Fecha de Ingreso</label>
-                        <input type="text" class="form-control" value="{{user.createdAt}}" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Nivel Academico</label>
-                        <input type="text" class="form-control" value="{{user.nivelA}}" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Nivel Investigacion</label>
-                        <input type="text" class="form-control" value="{{user.nivelI}}" readonly>
-                    </div>
+    <div class="row">
 
-                    <div class="form-group">
-                        <button class="btn btn-primary" type="submit">
-                            Guardar
-                        </button>
-                        <a href="javascript:history.back()" class="btn btn-danger">Volver</a>
-                    </div>
-                </form>
+        <div class="image">
+            <img src="{{user.path}}" alt="Inserte una foto de perfil">
+            <div>
+                <a href="/upload" class="btn">
+                    Editar foto
+                </a>
             </div>
         </div>
+
+        <form action="/info/edit/{{user.id}}?_method=PUT" method="POST" style="background-color:#E5E8E8;">
+            <h3 class="text-center">Editar Datos</h3>
+
+            <h4>Nombre Completo</h4>
+            <input type="text" placeholder="" class="box" value="{{user.name}}" readonly>
+            <h4>Correo Institucional</h4>
+            <input type="text" placeholder="" class="box" value="{{user.email}}" readonly>
+            <h4>Direccion</h4>
+            <input type="text" placeholder="" class="box" value="{{user.direccion}}" name="direccion">
+            <h4>Puesto</h4>
+            <input type="text" placeholder="" class="box" value="{{user.rango}}" readonly>
+            <h4>Telefono</h4>
+            <input type="text" placeholder="" class="box" value="{{user.telefono}}" name="telefono">
+            <h4>Fecha de Ingreso</h4>
+            <input type="text" placeholder="" class="box" value="{{user.createdAt}}" readonly>
+            <h4>Nivel Academico</h4>
+            <input type="text" placeholder="" class="box" value="{{user.nivelA}}" readonly>
+            <h4>Nivel Investigacion</h4>
+            <input type="text" placeholder="" class="box" value="{{user.nivelI}}" readonly>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn" type="submit">
+                    Guardar
+                </button>
+                <a href="/rol" class="btn">Volver</a>
+            </div>
+        </form>
     </div>
+
+</section>
+
+<!-- contact section ends -->
+
+

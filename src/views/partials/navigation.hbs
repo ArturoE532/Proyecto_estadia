@@ -16,13 +16,8 @@
     <nav class="navbar">
         {{#if user}}
         <a href="/rol">Inicio</a>
-        <a href="botones.html">Botones</a>
-        <a href="allnotes.html">All Notes</a>
-        <a href="FormularioP.html">FormularioP</a>
-        <a href="Admin-Form1.html">AdminForm1</a>
-        <a href="VerPersonal.html">Ver Personal</a>
-        <a href="Codigo.html">CodPrueba</a>
-        <a href="TablaCont.html">Tabla</a>
+        <a href="/notes">Actividades</a>
+        <a href="/users/logout">Cerrar sesion</a>
         {{else}}
         <div class="icons">
             <a href="/">Debes Inciar sesion para ver las opciones</a>
@@ -81,48 +76,3 @@
     </form>
 </div>
 <!-- Login ends -->
-
-
-
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-        <a class="navbar-brand" href="/">Notas App</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
-            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/">Home <span class="visually-hidden">(current)</span> </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                {{#if user}}
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-expanded="false">
-                        Notas
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="/notes">Todas las notas</a></li>
-                        <li><a class="dropdown-item" href="/rol">Inicio</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="/users/logout">Logaut</a></li>
-                    </ul>
-                </li>
-                {{else}}
-                <li class="nav-item">
-                    <a class="nav-link" href="/users/signin">Login</a>
-                </li>
-                {{/if}}
-            </ul>
-        </div>
-    </div>
-</nav>

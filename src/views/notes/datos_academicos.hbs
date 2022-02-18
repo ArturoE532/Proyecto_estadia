@@ -1,3 +1,100 @@
+<br>
+<!-- pricing section starts  -->
+<section class="pricing" id="pricing">
+    <h1 class="heading">Formacion <span> Academica</span> </h1>
+    <h1 class="heading">Formacion <span> Academica</span> </h1>
+    <div class="box-contanier">
+
+        <div class="box">
+            <span class="fas fa-exclamation"></span>
+            <div class="container">
+               
+                <a href="/dato/AllDatos" class="btn">Agregar</a>
+                 <a href="/rol" class="btn">Volver</a>
+            </div>
+
+            <h3>Grados Academicos</h3>
+
+            <table class="resp">
+                <thead>
+                    <tr class="tablacolor">
+                        <th scope="col">
+                            <h1>N.</h1>
+                        </th>
+                        <th scope="col">
+                            <h1>Titulo</h1>
+                        </th>
+                        <th scope="col">
+                            <h1>Institucion</h1>
+                        </th>
+                        <th scope="col">
+                            <h1>Pais</h1>
+                        </th>
+                        <th scope="col">
+                            <h1>Fecha de obtencion</h1>
+                        </th>
+                        <th scope="col">
+                            <h1>Acciones</h1>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{#each academicos}}
+
+                    <tr>
+                        <th scope="row">{{@index}}</th>
+                        <td>
+                            {{tipo}}
+                        </td>
+
+                        <td>
+                            {{institucion}}
+                        </td>
+
+                        <td>
+                            {{pais}}
+                        </td>
+
+                        <td>
+                            {{fecha_inicio}}
+                        </td>
+
+                        <td>
+                            <a href="#" class="btn">Editar</a>
+                            <a href="#" class="btn">Eliminar</a>
+                        </td>
+                    </tr>
+
+                    {{/each}}
+
+                </tbody>
+            </table>
+
+
+        </div>
+
+
+    </div>
+</section>
+<!-- pricing section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="container">
     <div class="row">
         <div class="col-3">

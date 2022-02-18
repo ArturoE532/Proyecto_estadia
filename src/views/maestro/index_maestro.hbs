@@ -1,24 +1,51 @@
-<div class="jumbotron mt-4 text-center">
+<!-- subjects section starts  -->
+   <section class="subjects services " id="services">
+      <br>
+      <br>
+      <h1 class="heading"><br><span> Maestro: </span><br> {{user.name}}</h1>
 
-    <h1 class="display-4">Maestro</h1>
-    <hr class="my-4">
 
-    <div class="row">
+         <div class="box-container2">
+            <div class="box-container">
+                <a href="/info/{{user._id}}" class="box">
+                  <i class="fas fa-user fa-5x"></i>
+                  <h3>Datos Personales</h3>
+                  </a>
+            
+               
+                  <a href="/notes/add" class="box">
+                  <i class="fas fa-file-medical fa-5x"></i>
+                  <h3>Agregar Actividad</h3>
+                  </a>
 
-        <div class="col-3">
-        </div>
+                   <a href="/dato/Academic" class="box">
+                  <i class="fas fa-book fa-5x"></i>
+                  <h3>Datos Academicos</h3>
+                  </a>
+              
 
-        <div class="col-6">
-            <a href="/info/{{user._id}}" class="btn btn-warning btn-block m-3">Datos Personales</a>
-            <a href="/notes/add" class="btn btn-success btn-block m-3">Agregar Actividad</a>
-            <a href="/dato/Academic" class="btn btn-info btn-block m-3">Datos Academicos</a>
-            <a href="/dato/Experience" class="btn btn-warning btn-block m-3">Experiencia Laboral</a>
-            <a href="/imp" class="btn btn-danger btn-block m-3">Imprimir Curriculum</a>
-        </div>
+                  <a href="/dato/Experience" class="box">
+                  <i class="fas fa-copy fa-5x"></i>
+                  <h3>Experiencia Lavoral</h3>  
+                </a>      
+       
+                 <a href="/imp" class="box">
+                  <i class="fas fa-file-export fa-5x"></i>
+                  <h3>Imprimir Reportes</h3>
+                 </a>   
 
-        <div class="col-2">
-        </div>
+            </div>
 
-    </div>
+         </div>
+      
+   </section>
+   <!-- subjects section end -->
+   <br>
+   <br>
+   
 
-</div>
+
+
+
+
+
