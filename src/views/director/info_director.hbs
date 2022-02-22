@@ -1,3 +1,60 @@
+<br>
+<!-- contact section starts  -->
+
+<section class="contact">
+
+    <h1 class="heading"><span>  Datos </span>Generales </h1>
+    <h1 class="heading"><span>  Datos Generales </span> </h1>
+
+
+
+    <div class="row">
+
+        <div class="image">
+            <img src="{{user.path}}" alt="Inserte una foto de perfil">
+        </div>
+
+
+
+        <form action="" style="background-color:#E5E8E8;">
+            <h3 class="text-center">Formulario</h3>
+
+            <h4>Nombre Completo</h4>
+            <input type="text" placeholder="" class="box" value="{{user.name}}" readonly>
+            <h4>Correo Institucional</h4>
+            <input type="text" placeholder="" class="box" value="{{user.email}}" readonly>
+            <h4>Direccion</h4>
+            <input type="text" placeholder="" class="box" value="{{user.direccion}}" readonly>
+            <h4>Puesto</h4>
+            <input type="text" placeholder="" class="box" value="{{user.rango}}" readonly>
+            <h4>Telefono</h4>
+            <input type="text" placeholder="" class="box" value="{{user.telefono}}" readonly>
+            <h4>Fecha de Ingreso</h4>
+            <input type="text" placeholder="" class="box" value="{{user.createdAt}}" readonly>
+            <h4>Nivel Academico</h4>
+            <input type="text" placeholder="" class="box" value="{{user.nivelA}}" readonly>
+            <h4>Nivel Investigacion</h4>
+            <input type="text" placeholder="" class="box" value="{{user.nivelI}}" readonly>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="/info/edit/{{user._id}}" class="btn">Editar informacion</a>
+                <a href="/rol" class="btn">Volver</a>
+            </div>
+        </form>
+    </div>
+
+</section>
+
+<!-- contact section ends -->
+
+
+
+
+
+
+
+
+
 <div class="jumbotron mt-4">
     <h1 class="display-4">Datos generales</h1>
     <hr class="my-4">

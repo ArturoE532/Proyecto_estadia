@@ -1,3 +1,94 @@
+<br>
+<!-- pricing section starts  -->
+<section class="pricing" id="pricing">
+    <h1 class="heading">.. <span> </span> </h1>
+    <h1 class="heading">Lista<span> Personal</span> </h1>
+    <div class="box-contanier">
+
+        <div class="box">
+            <span class="fas fa-exclamation"></span>
+            <div class="container">
+
+                <a href="javascript:history.back()" class="btn">Volver</a>
+            </div>
+
+            <h3>Todos los Registros</h3>
+
+            <table class="resp">
+                <thead>
+                    <tr class="tablacolor">
+                        <th scope="col">
+                            <h1>N.</h1>
+                        </th>
+                        <th scope="col">
+                            <h1>Nombre</h1>
+                        </th>
+                        <th scope="col">
+                            <h1>Fecha de Ingreso</h1>
+                        </th>
+                        <th scope="col">
+                            <h1>Estatus</h1>
+                        </th>
+                        <th scope="col">
+                            <h1>Operacion</h1>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{#each user}}
+
+                    <tr>
+                        <th scope="row">{{@index}}</th>
+                        <td>
+                            {{name}}
+                        </td>
+
+                        <td>
+                            {{createdAt}}
+                        </td>
+
+                        <td>{{#if status}}
+                            <input type="text" class="form-control" name="title" value="Activo" readonly>
+                            {{else}}
+                            <input type="text" class="form-control" name="title" value="Inactivo" readonly>
+                            {{/if}}
+                        </td>
+                        <td>
+
+                            <a href="/personal/info/{{_id}}" class="btn btn-primary btn-block btn-sm">Ver perfil</a>
+                            <a href="/personal/notes/{{_id}}" class="btn btn-light btn-block btn-sm">Ver notas</a>
+                            {{#if status}}
+                            <a href="/personal/toogleStatus/{{_id}}" class="btn btn-danger btn-block btn-sm">Dar de
+                                baja</a>
+                            {{else}}
+                            <a href="/personal/toogleStatus/{{_id}}" class="btn btn-success btn-block btn-sm">Dar de
+                                alta</a>
+                            {{/if}}
+                        </td>
+                    </tr>
+
+                    {{/each}}
+
+                </tbody>
+            </table>
+
+
+        </div>
+
+
+    </div>
+</section>
+<!-- pricing section ends -->
+
+
+
+
+
+
+
+
+
 <a href="javascript:history.back()" class="btn btn-danger m-3">Volver</a>
 <table class="table table-dark table-striped">
 
@@ -24,9 +115,9 @@
                 <input type="text" class="form-control" name="title" value="{{createdAt}}" readonly>
             </td>
             <td>{{#if status}}
-                    <input type="text" class="form-control" name="title" value="Activo" readonly>
+                <input type="text" class="form-control" name="title" value="Activo" readonly>
                 {{else}}
-                    <input type="text" class="form-control" name="title" value="Inactivo" readonly>
+                <input type="text" class="form-control" name="title" value="Inactivo" readonly>
                 {{/if}}
             </td>
             <td>
@@ -34,9 +125,9 @@
                 <a href="/personal/info/{{_id}}" class="btn btn-primary btn-block btn-sm">Ver perfil</a>
                 <a href="/personal/notes/{{_id}}" class="btn btn-light btn-block btn-sm">Ver notas</a>
                 {{#if status}}
-                    <a href="/personal/toogleStatus/{{_id}}" class="btn btn-danger btn-block btn-sm">Dar de baja</a>
+                <a href="/personal/toogleStatus/{{_id}}" class="btn btn-danger btn-block btn-sm">Dar de baja</a>
                 {{else}}
-                    <a href="/personal/toogleStatus/{{_id}}" class="btn btn-success btn-block btn-sm">Dar de alta</a>
+                <a href="/personal/toogleStatus/{{_id}}" class="btn btn-success btn-block btn-sm">Dar de alta</a>
                 {{/if}}
             </td>
         </tr>

@@ -1,3 +1,72 @@
+<br>
+<!-- pricing section starts  -->
+<section class="pricing" id="pricing">
+    <h1 class="heading">..<span> </span> </h1>
+    <h1 class="heading">Imprimir <span> Reportes</span> </h1>
+    <div class="box-contanier">
+
+        <div class="box">
+            <span class="fas fa-exclamation"></span>
+            <div class="container">
+
+                <a href="javascript:history.back()" class="btn m-2">Volver</a>
+            </div>
+
+            <h3>Reportes Actuales</h3>
+
+            <table class="resp">
+                <thead>
+                    <tr class="tablacolor">
+                        <th scope="col">
+                            <h1>#</h1>
+                        </th>
+                        <th scope="col">
+                            <h1>Proyecto</h1>
+                        </th>
+                        <th scope="col">
+                            <h1>Description</h1>
+                        </th>
+                        <th scope="col">
+                            <h1>Acciones</h1>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each notes}}
+
+                    <tr>
+                        <th scope="row">{{@index}}</th>
+                        <td>{{title}}</td>
+                        <td>{{description}}</td>
+                        <td>
+                            <a href="#" class="btn">Imprimir Reporte</a>
+                        </td>
+                    </tr>
+
+                    {{/each}}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<!-- pricing section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="jumbotron mt-4">
     <h1 class="display-4">Curriculum</h1>
     <hr class="my-4">

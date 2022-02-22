@@ -57,7 +57,7 @@ usersCtrl.signin = passport.authenticate('local', {
 usersCtrl.logout = (req, res) => {
     req.logout();
     req.flash('success_msg', 'Cesion cerrada');
-    res.redirect('/users/signin');
+    res.redirect('/');
 }
 
 module.exports = usersCtrl;

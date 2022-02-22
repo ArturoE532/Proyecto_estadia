@@ -1,3 +1,69 @@
+<h1 class="heading">Formacion <span> Academica</span> </h1>
+<br>
+<br>
+<h1 class="heading">Grados<span> Academicos</span> </h1>
+
+
+
+<section class="contact">
+    <div class="container colorForm">
+        <form id="form" action="/notes/newacademico" method="POST">
+            <br>
+            <hr class="my-4">
+            <h1 class="display-4 centrado">Datos Academicos</h1>
+            <h1 class="display-6 centrado">del Mtro. {{user.name}}</h1>
+            <br>
+            <div class="mb-3 centrado">
+                <select  value="tipo" value="{{tipo}}" name="tipo">
+                    <option value="" class="">-- Selecciona una opción --</option>
+                    <option value="Licenciatura" label="Licenciatura">Licenciatura</option>
+                    <option value="Especialidad" label="Especialidad">Especialidad</option>
+                    <option value="Maestría" label="Maestría">Maestría</option>
+                    <option value="Doctorado" label="Doctorado">Doctorado</option>
+                    <option value="Pos Doctorado" label="Pos Doctorado">Pos Doctorado</option>
+                </select>
+            </div>
+            <br>
+            <div class="mb-3">
+                <label class="form-label"><strong> Nombre de la Carrera:</strong></label>
+                <input type="text" class="form-control" value="{{carrera}}" name="carrera">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"><strong> Nombre de la Institución:</strong></label>
+                <input type="text" class="form-control" value="{{institucion}}" name="institucion">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"><strong> Fecha de inicio:</strong></label>
+                <input type="date" class="form-control" value="{{fecha_inicio}}" name="fecha_inicio">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"> <strong>Fecha de Termino:</strong></label>
+                <input type="date" class="form-control" value="{{fecha_termino}}" name="fecha_termino">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"> <strong>Pais / Estado:</strong></label>
+                <input type="text" class="form-control" value="{{pais}}" name="pais">
+            </div>
+            <br>
+
+            <div class="d-grid centrado">
+                <button class="btn">
+                    Guardar
+                </button>
+                <a href="javascript:history.back()" class="btn">Volver</a>
+            </div>
+
+        </form>
+        <br>
+    </div>
+</section>
+
+
+
 
 <div class="jumbotron mt-4">
     <h1 class="display-4">Datos Academicos</h1>
