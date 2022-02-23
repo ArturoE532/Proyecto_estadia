@@ -33,13 +33,13 @@ usersCtrl.signup = async (req, res) => {
         const emailUser = await User.findOne({ email: email });
         if (emailUser) {
             req.flash('error_msg', 'El correo ya esta registrado');
-            res.redirect('/users/signup');
+            res.redirect('/');
         } else {
             const newUser = new User({ name, email, password, rango, nivelA, nivelI });
             newUser.password = await newUser.encrypPassword(password);
             await newUser.save();
             req.flash("success_msg", "Registro exitoso");
-            res.redirect('/users/signup');
+            res.redirect('/');
         }
     }
 };
@@ -49,7 +49,7 @@ usersCtrl.renderSignInForm = (req, res) => {
 }
 
 usersCtrl.signin = passport.authenticate('local', {
-    failureRedirect: '/users/signin',
+    failureRedirect: '/',
     successRedirect: '/rol',
     failureFlash: true
 })

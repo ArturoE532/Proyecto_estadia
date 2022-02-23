@@ -14,7 +14,7 @@ const AcademicoSchema = new Schema({
         required: true
     },
     fecha_inicio: {
-        type: Date,
+        type: String,
         required: true
     },
     fecha_termino: {

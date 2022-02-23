@@ -1,44 +1,35 @@
-<br>
-<br>
-<h1 class="heading"> Nueva <span>Actividad</span> </h1>
 <!-- services section starts  -->
 <section class="services" id="services">
+
     <h1 class="heading"> Nueva <span>Actividad</span> </h1>
+
     <div class="box-container">
+
         <section class="centrado">
+
             <div class="box">
-                <span>#</span>
+
                 <i class="fas fa-user"></i>
-                <div class="col-md-4 mx-auto">
-                    <div class="card text-center">
-                        <div class="card-header">
-                            <h3>New Note</h3>
-                        </div>
-                        <div class="card-body">
-                            <form action="/notes/newnote" method="POST">
-                                <div class="form-group">
-                                    <input type="text" name="title" class="form-control" placeholder="Title"></input>
-                                </div>
-                                <br>
-                                <div class="form-group">
-                                    <textarea name="description" class="form-control" placeholder="Description"
-                                        required></textarea>
-                                </div>
-                                <div class="d-grid">
-                                    <button class="btn">
-                                        Guardar
-                                    </button>
-                                    <a href="javascript:history.back()" class="btn btn-danger btn-block">Volver</a>
-                                </div>
-                            </form>
-                        </div>
+                <h3>New Note</h3>
+
+                <form action="/notes/newnote" method="POST">
+                    <h2>Titulo</h2>
+                    <input class="box" type="text" name="title" required></input>
+                    <h2>Descripcion</h2>
+                    <textarea class="box" name="description" required></textarea>
+                    <div class="d-grid">
+                        <button class="btn">
+                            Guardar
+                        </button>
+                        <a href="javascript:history.back()" class="btn">Volver</a>
                     </div>
-                </div>
+                </form>
+
             </div>
+
         </section>
 
     </div>
+
 </section>
 <!-- services section ends -->
-
-

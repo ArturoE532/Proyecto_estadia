@@ -1,104 +1,43 @@
-<h1 class="heading">Experiencia <span> Laboral</span> </h1>
-<br>
-<br>
-<h1 class="heading">Experiencia<span> Laboral</span> </h1>
+<section class="contact services">
+    <h1 class="heading">Experiencia<span> Laboral</span> </h1>
 
+    <div class="box-container">
 
+        <section class="centrado">
 
-<section class="contact">
-    <div class="container colorForm">
-        <form id="form" action="/notes/newExpLab" method="POST">
-            <br>
-            <hr class="my-4">
-            <h1 class="display-4 centrado">Experiencia Laboral</h1>
-            <h1 class="display-6 centrado ">del Mtro. {{user.name}}</h1>
-            <br>
-            <div class="mb-3">
-                <label class="form-label"> Nombre de la Institucion:</label>
-                <input type="text" class="form-control" value="{{institucion}}" name="institucion">
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Fecha de inicio:</label>
-                <input type="date" class="form-control" value="{{fecha_inicio}}" name="fecha_inicio">
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Fecha de Termino:</label>
-                <input type="date" class="form-control" value="{{fecha_termino}}" name="fecha_termino">
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Puesto:</label>
-                <input type="text" class="form-control" value="{{puesto}}" name="puesto">
-            </div>
-
-            <div class="d-grid centrado">
-                <button class="btn">
-                    Guardar
-                </button>
-                <a href="javascript:history.back()" class="btn">Volver</a>
-            </div>
-            <br>
-        </form>
-        <br>
-    </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-<div class="jumbotron mt-4">
-    <h1 class="display-4">Experiencia Laboral</h1>
-    <h1 class="display-6">del Mtro. {{user.name}}</h1>
-    <hr class="my-4">
-
-
-    <div class="container">
-        <div class="row">
-
-            <div class="col-3"></div>
-
-            <div class="col-6 ">
+            <div class="box">
 
                 <form action="/notes/newExpLab" method="POST">
-                    <div class="mb-3">
-                        <label class="form-label"><strong>Nombre de la Institucion:</strong></label>
-                        <input type="text" class="form-control" value="{{institucion}}" name="institucion">
-                    </div>
+                    <h1>Experiencia Laboral</h1>
+                    <h1>del Mtro. {{user.name}}</h1>
 
-                    <div class="mb-3">
-                        <label class="form-label"><strong> Fecha de inicio:</strong></label>
-                        <input type="date" class="form-control" value="{{fecha_inicio}}" name="fecha_inicio">
-                    </div>
 
-                    <div class="mb-3">
-                        <label class="form-label"> <strong>Fecha de Termino:</strong></label>
-                        <input type="date" class="form-control" value="{{fecha_termino}}" name="fecha_termino">
-                    </div>
+                    <h2><strong> Nombre de la Carrera:</strong></h2>
+                    <input type="text" class="box" name="carrera" required>
 
-                    <div class="mb-3">
-                        <label class="form-label"> <strong>Puesto:</strong></label>
-                        <input type="text" class="form-control" value="{{puesto}}" name="puesto">
-                    </div>
+                    <h2><strong> Nombre de la Institucion:</strong></h2>
+                    <input type="text" class="box" value="{{institucion}}" name="institucion">
 
-                    <div class="d-grid gap-2 d-md-block">
-                        <button class="btn btn-primary btn-block">
-                            Guardar
-                        </button>
-                        <a href="javascript:history.back()" class="btn btn-danger btn-block">Volver</a>
-                    </div>
+                    <h2><strong> Fecha de inicio:</strong></h2>
+                    <input type="date" class="box" value="{{fecha_inicio}}" name="fecha_inicio">
+
+                    <h2><strong> Fecha de Termino:</strong></h2>
+                    <input type="date" class="box" value="{{fecha_termino}}" name="fecha_termino">
+
+                    <h2><strong> Puesto:</strong></h2>
+                    <input type="text" class="box" value="{{puesto}}" name="puesto">
+
+
+                    <div><button class="btn">
+                        Guardar
+                    </button>
+                    <a href="javascript:history.back()" class="btn">Volver</a></div>
+
                 </form>
+
             </div>
 
-            <div class="col-3"></div>
+        </section>
 
-        </div>
     </div>
-</div>
+</section>

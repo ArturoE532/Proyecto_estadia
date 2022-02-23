@@ -1,44 +1,29 @@
-<div class="jumbotron mt-4">
-    <h3 class="form-label">Nombre del Maestro:</h4>
-        <h1 class="text-info">{{user.name}}</h1>
-        <hr class="my-4">
-        <a href="javascript:history.back()" class="btn btn-danger">Volver</a>
+<!-- services section starts  -->
+<section class="services" id="services">
+    <h1 class="heading"> Nombre del Maestro: <span>{{user.name}}</span> </h1>
+    <a href="javascript:history.back()" class="btn">Volver</a>
+    <div class="box-container">
 
-        <div class="row m-3">
+        {{#each notes}}
+        <div class="box">
 
-            {{#each notes}}
+            <span>{{@index}}</span>
 
-            <div class="col-md-4">
+            <form action="/cur/?_method=GET" method="POST">
+                <input type="hidden" name="_method" value="GET">
 
-                <div class="card">
+                <h3>{{title}}</h3>
 
-                    <div class="card-body">
+                <p>{{description}}</p>
 
-                        <form action="/cur/?_method=GET" method="POST">
-                            <input type="hidden" name="_method" value="GET">
-
-                            <div class="mb-3">
-                                <label for="" class="form-label">Nombre del proyecto</label>
-                                <input class="form-control" name="title" value="{{title}}" readonly>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
-                                <input class="form-control" name="description" value="{{description}}" readonly>
-                            </div>
-
-                            <button type="submit" class="btn btn-success btn-block btn-sm">
-                                Imprimir Curriculum
-                            </button>
-                        </form>
-
-                    </div>
-                </div>
-
-            </div>
-
-            {{/each}}
+                <button type="submit" class="btn btn-success btn-block btn-sm">
+                    Imprimir Curriculum
+                </button>
+            </form>
 
         </div>
+        {{/each}}
 
-</div>
+    </div>
+</section>
+<!-- services section ends -->

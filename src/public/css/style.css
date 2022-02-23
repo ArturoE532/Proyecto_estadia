@@ -69,6 +69,7 @@ section{
 .btn:hover{
     letter-spacing: .2rem;
     opacity: .8;
+    background-color: #000000;
 }
 .heading{
     text-align: center;
@@ -216,6 +217,11 @@ section{
     cursor: pointer;
     height: 4.5rem;
     width: 4.5rem;
+}
+
+.services{
+  padding-top: 10rem ;
+  padding-bottom: 10rem;
 }
 
 .services .box-container{
@@ -948,7 +954,7 @@ section{
 .contact .row .image {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 40rem;
-          flex: 1 1 40rem;
+          flex: 1 1 10rem;
 }
 
 .contact .row .image img {
@@ -1228,7 +1234,7 @@ table {
 table tr th,
 table tr td {
   padding: 0.5625em 0.625em;
-  font-size: 0.875em;
+  font-size: 1.5em;
   color: #222222;
   border: 2px solid #dddddd;
 }
@@ -1345,50 +1351,55 @@ input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
 }
 
 
-#form {
-  position: relative;
-  width: 500px;
-  margin: 50px auto 100px auto;
-}
-
 input {
-  width: 470px;
+  width: 75%;
   height: 50px;
-  padding: 0px 15px 0px 15px;
+  padding: 0px 15px 1 15px;
   background: transparent;
   border: solid 1px #b3aca7;
+  margin-bottom: 1rem;
   
 }
 
 input:hover {
   background: #b3aca7;
-  color: #e2dedb;
+  color: var(--text-color-1);
 }
 
 
 .colorForm{
   background-color:#E5E7E9;
+  padding: 1rem;
 }
 
+
 select {
-  width: 370px;
+  width: 75%;
   height: 50px;
   padding: 0px 15px 0px 15px;
-  background: transparent;
   color: #726659;
   border: solid 1px #b3aca7;
-  
+    box-shadow: var(--box-shadow);
+    border-radius: 0.5rem;
+    background: var(--bg-color-2);
+    position: relative;
+    margin-bottom: 1rem;
 }
 
 select:hover {
   background: #b3aca7;
-  color: #e2dedb;
+  color: #000000;
 }
 
 textarea{
-  width: 470px;
+  width: 75%;
   height: 80px;
-  padding: 0px 15px 0px 15px;
+  padding: 10px 15px 0px 15px;
   background: transparent;
   border: solid 1px #b3aca7;
+}
+
+h2{
+  color: var(--text-color-1);
+  padding: 1rem 0rem 0rem;
 }

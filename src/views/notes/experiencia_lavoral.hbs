@@ -1,7 +1,5 @@
-<br>
 <!-- pricing section starts  -->
-<section class="pricing" id="pricing">
-    <h1 class="heading">Experiencia <span> Laboral</span> </h1>
+<section class="pricing services" id="pricing">
     <h1 class="heading">Experiencia <span> Laboral</span> </h1>
     <div class="box-contanier">
 
@@ -9,8 +7,8 @@
             <span class="fas fa-exclamation"></span>
             <div class="container">
 
-                <a href="/rol" class="btn btn-success btn-sm m-3 ">Regresar</a>
-                <a href="/dato/AllExperie" class="btn btn-success btn-sm m-3">Agregar</a>
+                <a href="/dato/AllExperie" class="btn">Agregar</a>
+                <a href="/rol" class="btn">Volver</a>
             </div>
 
             <h3>Trayectoria Profesional</h3>
@@ -74,73 +72,3 @@
     </div>
 </section>
 <!-- pricing section ends -->
-
-
-
-
-
-
-
-
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-3">
-        </div>
-        <div class="col-5">
-            <h2 style="color: #FFFFFF">Experiencia Laboral</h2>
-        </div>
-        <div class="col-4">
-            <a href="/rol" class="btn btn-success btn-sm m-3 ">Regresar</a>
-            <a href="/dato/AllExperie" class="btn btn-success btn-sm m-3">Agregar</a>
-        </div>
-    </div>
-
-
-    <table class="table table-dark table-striped">
-
-        <thead>
-            <tr>
-
-                <th scope="col">Puesto Desem.</th>
-                <th scope="col">Institucion</th>
-                <th scope="col">Fecha de Inicio</th>
-                <th scope="col">Fecha Fin</th>
-                <th scope="col">Empleo Actual</th>
-                <th scope="col">Acciones</th>
-            </tr>
-        </thead>
-
-        <tbody>
-
-            {{#each explab}}
-
-            <tr>
-                <th scope="row">{{@index}}</th>
-                <td>
-                    {{institucion}}
-                </td>
-                <td>
-                    {{fecha_inicio}}
-                </td>
-                <td>
-                    {{fecha_termino}}
-                </td>
-                <td>
-                    actual
-                </td>
-                <td>
-
-                    <a href="#" class="btn btn-primary btn-block btn-sm">Editar</a>
-
-                    <a href="#" class="btn btn-danger btn-block btn-sm">Eliminar</a>
-                </td>
-            </tr>
-
-            {{/each}}
-
-        </tbody>
-
-    </table>
-</div>
