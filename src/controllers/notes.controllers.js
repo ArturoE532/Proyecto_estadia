@@ -243,7 +243,7 @@ notasCtrl.rendertoogleStatus = async (req, res) => {
         const user = await User.findById(id);
         user.status = !user.status;
         await user.save();
-        res.render('director/index_director');
+        res.redirect('/personal');
     }
 
     if (req.user.rango === "Admin") {

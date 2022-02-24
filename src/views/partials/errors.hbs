@@ -1,17 +1,38 @@
 {{#if error}}
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{error}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+<section class="login__modal">
+    <div class="login__bg">
+        <div class="login__modal-content">
+            <i class="fas fa-times login__modal-close"></i>
+
+            <div class="login__container">
+                <h1 class="footer__titlee">Aviso</h1>
+                <ul class="services__modal-services grid">
+                    <li class="services__modal-service">
+                        <i class="fa fa-user-times services__modal-icon"></i>
+                        <p class="login__description">
+                            {{error}}
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
+</section>
 {{/if}}
 
 {{#each errors}}
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{text}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+<section class="login__modal">
+    <div class="login__bg">
+        <div class="login__modal-content">
+            <i class="fas fa-times login__modal-close"></i>
+
+            <div class="login__container ">
+                <h2 class="footer__titlee">Aviso</h2>
+                <p class="login__description">
+                    {{text}}
+                </p>
+            </div>
+        </div>
     </div>
+</section>
 {{/each}}

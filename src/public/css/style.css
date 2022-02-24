@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
 
 :root{
-    --main-color:#2980b9;
+    --main-color:#27ae60;
     --bg-color-1:#eee;
     --bg-color-2:#fff;
     --text-color-1:#444;
@@ -221,7 +221,7 @@ section{
 
 .services{
   padding-top: 10rem ;
-  padding-bottom: 10rem;
+  padding-bottom: 5rem;
 }
 
 .services .box-container{
@@ -494,9 +494,6 @@ section{
 .footer .credit span{
     color:var(--main-color);
 }
-
-
-
 
 
 /* -------------------------------------------- */
@@ -1222,7 +1219,6 @@ section{
 
 table {
   width: 100%;
-  background: rgb(59, 167, 86);
   margin-bottom: 1.25em;
   border: solid 2px #88a1a170;
   border-collapse: collapse;
@@ -1402,4 +1398,87 @@ textarea{
 h2{
   color: var(--text-color-1);
   padding: 1rem 0rem 0rem;
+}
+
+
+.services__modal-services{
+  row-gap: 1rem;
+}
+
+.services__modal-service{
+  display: flex;
+}
+
+.services__modal-icon{
+  color: var(--text-color-1);
+  margin-right: .5rem;
+  padding-top: 0.3rem;
+}
+
+/*==================== LOGIN ====================*/
+.login__bg {
+  padding:3rem;
+    border-radius: .5rem;
+    background: var(--bg-color-2);
+}
+
+.login__description {
+  text-align: center;
+  padding-left: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.login__modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  z-index: 1000;
+  opacity: 1;
+  visibility: visible;
+  transition: .3s;
+}
+
+.login__modal-content{
+  position: relative;
+  background-color: var(--body-color-2);
+  padding: 1.5rem;
+  border-radius: .5rem;
+}
+
+.login__modal-close{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  columns: var(--text-color-1);
+  cursor: pointer;
+}
+
+/* Active Modal */
+.active-modall{
+  opacity: 0;
+  visibility: hidden;
+}
+
+.footer__titlee{
+  font-size: 2rem;
+  margin-bottom: .25rem;
+  text-align: center;
+  padding: 2rem 0rem 2rem;
+
+}
+
+.login__container{
+  border-radius: .5rem;
+  background: var(--bg-color-2);
+  color:var(--text-color-1);
+  text-transform: uppercase;
+  font-size: 2rem;
 }

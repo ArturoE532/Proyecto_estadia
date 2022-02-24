@@ -12,7 +12,7 @@
                 <i class="fas fa-user"></i>
                 <h3>New Note</h3>
 
-                <form action="/notes/newnote" method="POST">
+                <form action="/notes/edit/{{note.id}}?_method=PUT" method="POST">
                     <input type="hidden" name="_method" value="PUT">
 
                     <h2>Titulo</h2>
