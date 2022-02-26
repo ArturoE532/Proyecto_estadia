@@ -1,3 +1,18 @@
+/*==================== SERVICES MODAL ====================*/
+const logmodalViews = document.querySelectorAll('.login__modal'),
+      logmodalCloses = document.querySelectorAll('.login__modal-close')
+
+let logmodal = function(logmodalClick){
+    logmodalViews[logmodalClick].classList.add('active-modall')
+}
+
+logmodalCloses.forEach((logmodalClose) => {
+    logmodalClose.addEventListener('click', () => {
+        logmodalViews.forEach((logmodalView) => {
+            logmodalView.classList.add('active-modall')
+        })
+    })
+})
 
 let loginBtn = document.querySelector('.account-form .login-btn');
 
@@ -17,19 +32,3 @@ document.querySelector('#account-btn').onclick = () =>{
 document.querySelector('#close-form').onclick = () =>{
   accountForm.classList.remove('active');
 };
-
-/*==================== SERVICES MODAL ====================*/
-const logmodalViews = document.querySelectorAll('.login__modal'),
-      logmodalCloses = document.querySelectorAll('.login__modal-close')
-
-let logmodal = function(logmodalClick){
-    logmodalViews[logmodalClick].classList.add('active-modall')
-}
-
-logmodalCloses.forEach((logmodalClose) => {
-    logmodalClose.addEventListener('click', () => {
-        logmodalViews.forEach((logmodalView) => {
-            logmodalView.classList.add('active-modall')
-        })
-    })
-})
